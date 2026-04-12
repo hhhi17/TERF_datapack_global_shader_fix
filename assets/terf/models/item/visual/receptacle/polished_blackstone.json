@@ -1,0 +1,7 @@
+{
+	"parent": "terf:item/visual/receptacle/model",
+	"textures": {
+		"all": "block/polished_blackstone",
+		"particle": "block/polished_blackstone"		
+	}
+}

@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "terf:block/data_cable",
+      "y": 90
+    },
+    "axis=y": {
+      "model": "terf:block/data_cable",
+      "x": 90
+    },
+    "axis=z": {
+      "model": "terf:block/data_cable"
+    }
+  }
+}

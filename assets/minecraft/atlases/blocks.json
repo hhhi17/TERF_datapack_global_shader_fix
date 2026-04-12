@@ -1,0 +1,17 @@
+{
+    "sources": [
+        {
+            "type": "single",
+            "resource": "entity/decorated_pot/decorated_pot_base"
+        },
+        {
+            "type": "single",
+            "resource": "entity/decorated_pot/decorated_pot_side"
+        },
+        {
+            "type": "minecraft:single",
+            "resource": "minecraft:gui/demo_background",
+            "sprite": "gui/demo_background"
+        }
+    ]
+}

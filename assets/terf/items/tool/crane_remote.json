@@ -1,0 +1,7 @@
+{
+	"model": {
+		"type": "minecraft:model",
+		"model": "terf:item/tool/crane_remote"
+	},
+	"hand_animation_on_swap": false
+}

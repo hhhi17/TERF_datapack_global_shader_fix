@@ -1,0 +1,10 @@
+{"providers":[
+{"type":"reference","id":"minecraft:images"},
+{"type":"reference","id":"minecraft:negspace"},
+
+{"type":"bitmap","file":"minecraft:font/star_surface.png","ascent":128,"height":256,"chars":["\ueffd"]},
+{"type":"bitmap","file":"minecraft:font/sun_beam.png","ascent":128,"height":256,"chars":["\uefff"]},
+{"type":"bitmap","file":"minecraft:font/energy_sphere.png","ascent":128,"height":256,"chars":["\uf000"]},
+{"type":"bitmap","file":"minecraft:font/energy_flare.png","ascent":128,"height":256,"chars":["\uf001"]},
+{"type":"bitmap","file":"minecraft:font/lens_flare.png","ascent":128,"height":256,"chars":["\uf002"]}
+]}

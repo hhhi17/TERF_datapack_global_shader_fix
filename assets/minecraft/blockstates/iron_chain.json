@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "terf:block/high_voltage_cable",
+      "y": 90
+    },
+    "axis=y": {
+      "model": "terf:block/high_voltage_cable",
+      "x": 90
+    },
+    "axis=z": {
+      "model": "terf:block/high_voltage_cable"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "minecraft:block/brown_glazed_terracotta",
+    "front": "minecraft:block/brown_glazed_terracotta",
+    "side": "minecraft:block/entity_conveyor_side",
+    "top": "minecraft:block/magenta_glazed_terracotta"
+  }
+}

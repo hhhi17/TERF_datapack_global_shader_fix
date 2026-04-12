@@ -1,0 +1,7 @@
+{
+	"parent": "terf:item/visual/hoverbike",
+	"textures": {
+	  "layer0": "terf:item/model/hoverbike",
+	  "layer1": "terf:item/model/hoverbike_tint"
+	}
+}

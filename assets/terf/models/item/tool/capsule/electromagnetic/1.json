@@ -1,0 +1,7 @@
+{
+	"parent": "terf:item/tool/capsule/standard_1",
+	"textures": {
+		"0": "terf:item/model/electromagnetic_capsule",
+		"particle": "terf:item/model/electromagnetic_capsule"
+	}
+}

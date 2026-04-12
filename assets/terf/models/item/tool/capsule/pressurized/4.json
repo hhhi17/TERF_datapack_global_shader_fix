@@ -1,0 +1,7 @@
+{
+	"parent": "terf:item/tool/capsule/standard_4",
+	"textures": {
+		"0": "terf:item/model/pressurized_capsule",
+		"particle": "terf:item/model/pressurized_capsule"
+	}
+}

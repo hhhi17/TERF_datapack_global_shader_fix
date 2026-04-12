@@ -1,0 +1,67 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "terf:item/model/multiblock_core",
+		"particle": "terf:item/model/multiblock_core"
+	},
+	"elements": [
+		{
+			"from": [5.5, 8, 6],
+			"to": [9.5, 12, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8.5, 10, 8]},
+			"faces": {
+				"north": {"uv": [4, 4, 8, 8], "texture": "#0"},
+				"east": {"uv": [0, 0, 4, 4], "texture": "#0"},
+				"south": {"uv": [0, 4, 4, 8], "texture": "#0"},
+				"west": {"uv": [4, 0, 8, 4], "texture": "#0"},
+				"up": {"uv": [4, 12, 0, 8], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [12, 0, 8, 4], "rotation": 270, "texture": "#0"}
+			}
+		},
+		{
+			"from": [7.5, 10, 2.25],
+			"to": [8.5, 11, 6],
+			"rotation": {"angle": 0, "axis": "y", "origin": [10.5, 12, 8]},
+			"faces": {
+				"north": {"uv": [7, 11, 8, 12], "texture": "#0"},
+				"east": {"uv": [8, 6, 12, 7], "texture": "#0"},
+				"south": {"uv": [6, 11, 7, 12], "texture": "#0"},
+				"west": {"uv": [8, 7, 12, 8], "texture": "#0"},
+				"up": {"uv": [12, 9, 8, 8], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [12, 9, 8, 10], "rotation": 270, "texture": "#0"}
+			}
+		},
+		{
+			"from": [9.5, 8, 6],
+			"to": [10.5, 10, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [12.5, 10, 12]},
+			"faces": {
+				"north": {"uv": [5, 11, 6, 13], "texture": "#0"},
+				"east": {"uv": [4, 8, 8, 10], "texture": "#0"},
+				"south": {"uv": [4, 11, 5, 13], "texture": "#0"},
+				"west": {"uv": [8, 4, 12, 6], "texture": "#0"},
+				"up": {"uv": [8, 11, 4, 10], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [12, 10, 8, 11], "rotation": 270, "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 0.75, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 45, 0],
+			"translation": [0, 0.5, 0],
+			"scale": [0.6, 0.6, 0.6]
+		},
+		"ground": {
+			"scale": [0.6, 0.6, 0.6]
+		},
+		"gui": {
+			"rotation": [30, 225, 0],
+			"translation": [0, -1.75, 0]
+		}
+	}
+}

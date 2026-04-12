@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=south": {
+      "model": "terf:block/active_fuel_rod_assembly"
+    },
+    "facing=east": {
+      "model": "terf:block/active_fuel_rod_assembly_t"
+    },
+    "facing=north": {
+      "model": "terf:block/active_fuel_rod_assembly_b"
+    },
+    "facing=west": {
+      "model": "terf:block/active_fuel_rod_assembly_tb"
+    }
+  }
+}

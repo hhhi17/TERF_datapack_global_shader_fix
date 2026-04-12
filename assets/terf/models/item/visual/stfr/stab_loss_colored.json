@@ -1,0 +1,6 @@
+{
+	"parent": "terf:item/visual/stfr/stab_loss",
+	"textures": {
+	  "layer0": "terf:item/model/white"
+	}
+}

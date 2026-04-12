@@ -1,0 +1,7 @@
+{
+	"model": {
+		"type": "minecraft:model",
+		"model": "terf:item/visual/stfr/shutdown_fail_restab",
+		"tints":[{"type":"minecraft:custom_model_data","default":0,"index":0}]
+	}
+}

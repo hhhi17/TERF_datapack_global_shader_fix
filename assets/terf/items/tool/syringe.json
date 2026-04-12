@@ -1,0 +1,29 @@
+{
+	"model": {
+		"type": "minecraft:range_dispatch",
+		"property": "minecraft:custom_model_data",
+		"scale": 1,
+		"entries": [
+			{"threshold": 1 ,"model": {
+				"type": "minecraft:model",
+				"model": "terf:item/tool/syringe_1",
+				"tints": [{"type":"minecraft:constant","value":-1},{"type":"minecraft:custom_model_data","default":-7697782,"index":0}]
+			}},
+			{"threshold": 333 ,"model": {
+				"type": "minecraft:model",
+				"model": "terf:item/tool/syringe_2",
+				"tints": [{"type":"minecraft:constant","value":-1},{"type":"minecraft:custom_model_data","default":-7697782,"index":0}]
+			}},
+			{"threshold": 666 ,"model": {
+				"type": "minecraft:model",
+				"model": "terf:item/tool/syringe_3",
+				"tints": [{"type":"minecraft:constant","value":-1},{"type":"minecraft:custom_model_data","default":-7697782,"index":0}]
+			}}
+		],
+		"fallback": {
+			"type": "minecraft:model",
+			"model": "terf:item/tool/syringe_0",
+			"tints": [{"type":"minecraft:constant","value":-1},{"type":"minecraft:custom_model_data","default":-7697782,"index":0}]
+		}
+	}
+}

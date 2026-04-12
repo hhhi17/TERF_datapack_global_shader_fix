@@ -1,0 +1,7 @@
+{
+	"parent": "terf:item/visual/receptacle/model",
+	"textures": {
+		"all": "block/dark_prismarine",
+		"particle": "block/dark_prismarine"
+	}
+}

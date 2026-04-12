@@ -1,0 +1,33 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "gui/demo_background",
+		"1": "terf:gui/sprites/extrusion_mold_bar_gui",
+		"particle": "gui/demo_background"
+	},
+	"elements": [
+		{
+			"from": [3.5, 3.5, 4],
+			"to": [12.5, 12.5, 4],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7.5, 7, 12]},
+			"faces": {
+				"south": {"uv": [4.9375, 0.375, 0.4375, 4.875], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"from": [13, 4, 4],
+			"to": [21, 12, 4],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16.5, 7, 12]},
+			"faces": {
+				"south": {"uv": [16, 0, 0, 16], "rotation": 180, "texture": "#1"}
+			}
+		}
+	],
+	"gui_light": "front",
+	"display": {
+		"gui": {
+			"scale": [2, 2, 2]
+		}
+	}
+}

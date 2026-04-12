@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=south": {
+      "model": "terf:block/control_rod"
+    },
+    "facing=east": {
+      "model": "terf:block/control_rod_attachment"
+    },
+    "facing=north": {
+      "model": "terf:block/control_rod_attachment"
+    },
+    "facing=west": {
+      "model": "terf:block/control_rod_attachment"
+    }
+  }
+}

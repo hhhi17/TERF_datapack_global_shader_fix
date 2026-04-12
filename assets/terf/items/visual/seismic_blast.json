@@ -1,0 +1,7 @@
+{
+	"model": {
+		"type": "minecraft:model",
+		"model": "terf:item/visual/seismic_blast",
+		"tints":[{"type":"minecraft:custom_model_data","default":0,"index":0}]
+	}
+}

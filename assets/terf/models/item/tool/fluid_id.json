@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:item/generated",
+	"textures": {
+	  "layer0": "terf:item/fluid_id_tool",
+	  "layer1": "terf:item/fluid_id_tool_overlay"
+	}
+  }

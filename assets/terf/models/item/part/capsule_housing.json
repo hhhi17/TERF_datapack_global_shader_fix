@@ -1,0 +1,7 @@
+{
+	"parent": "terf:item/tool/capsule/standard_0",
+	"textures": {
+		"0": "terf:item/model/capsule_housing",
+		"particle": "terf:item/model/capsule_housing"
+	}
+}

@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/slab",
+    "textures": {
+        "bottom": "block/coil_top",
+        "top": "block/coil_top",
+        "side": "block/coil"
+    }
+}

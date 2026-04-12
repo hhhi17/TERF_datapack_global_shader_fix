@@ -1,0 +1,6 @@
+{
+  "parent": "terf:item/visual/missiles/missile",
+  "textures":{
+    "1": "terf:item/model/missile_he"
+  }
+}

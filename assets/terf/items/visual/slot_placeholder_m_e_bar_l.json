@@ -1,0 +1,7 @@
+{
+	"oversized_in_gui": true,
+	"model": {
+		"type": "minecraft:model",
+		"model": "terf:item/visual/slot_placeholder_m_e_bar_l"
+	}
+}

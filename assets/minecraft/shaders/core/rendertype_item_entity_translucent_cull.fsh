@@ -12,24 +12,27 @@ in float sphericalVertexDistance;
 in float cylindricalVertexDistance;
 in vec4 vertexColor;
 in vec2 texCoord0;
-flat in vec2 UVOrigin;
+flat in ivec2 UVTexelOrigin;
+flat in vec2 atlasSize;
 in vec2 texCoord1;
 in vec4 control;
 
 out vec4 fragColor;
 
-void main() {
+void main()
+{
     if (shaderID >= 1111) // It should be {... > 0}, but it really doesnt matter
     {
         // Changing this may cause unexpected behaviour, so I left most of it as it is
-        // !!!WARNING JONACODE BELOW!!!
-        vec2 atlasSize = vec2(textureSize(Sampler0, 0));
-        vec2 texCoord = (texCoord0 - UVOrigin) * atlasSize / 16;
-        vec2 NoiseProvider = texCoord0 * 1000; // Base noise scale?
+        // !!!WARNING *old* BELOW!!! Jona was not happy about my wit
+        //vec2 atlasSize = textureSize(Sampler0, 0);
+        vec2 currentPixel = texCoord0 * atlasSize;
+        vec2 texCoord = (currentPixel - vec2(UVTexelOrigin)) * 0.0625; // divide by 16
+        vec2 NoiseProvider = texCoord0 * 1000.0; // Base noise scale?
 
         if (shaderID == 4444)
         {
-            // Test shader. It works, what else can I say?
+            // Test shader. (Magma/sun surface)
 
             float time = GameTime * 1000.0;
             float intensity = 0.0;
@@ -43,7 +46,7 @@ void main() {
         }
         else if (shaderID == 4443)
         {
-            // Warp core shader, did it even work in first place?
+            // Warp core shader (white spiral)
             vec2 point = texCoord;
             if (control.b/256.0 > 2.0) {
                 point += vec2(0.0,1.0);
@@ -60,7 +63,7 @@ void main() {
         }
         else if (shaderID == 4442)
         {
-            // Stfr Shutdown Fail Restabilization shader. I have a stong feeling I ve messed it up
+            // Stfr Shutdown Fail Restabilization shader. (flames from the centre)
         
             float time = GameTime + control.b;
             float fade = control.g-distance(texCoord, vec2(0.5))*2.0;
@@ -82,7 +85,7 @@ void main() {
         }
         else if (shaderID == 4441)
         {
-            // Seismic Charge Flash shader. Works, but it would look better without it.
+            // Seismic Charge Flash shader. (ender fragon death lights, but white)
 
             if (control.b == 0.0) discard;
         
@@ -97,7 +100,7 @@ void main() {
         }
         else if (shaderID == 4434)
         {
-            // Seismic Charge shader. Works
+            // Seismic Charge shader. (Cyan/blue expanding energy disk)
 
             if (control.b == 0.0) discard;
         
@@ -119,11 +122,11 @@ void main() {
         }
         else
         {
-            // Debug
+            // Debug. (renders blinking placeholder texture)
             float time = GameTime * 1000.0;
             fragColor = vec4(vertexColor.rgb, abs(sin(time)));
         }
-        // Let Jona be clear
+        // Remove all empty pixels
         if (fragColor.a <= 0.0) discard;
         return;
     }

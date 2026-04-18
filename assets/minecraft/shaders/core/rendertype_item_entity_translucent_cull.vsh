@@ -21,19 +21,19 @@ out float sphericalVertexDistance;
 out float cylindricalVertexDistance;
 out vec4 vertexColor;
 out vec2 texCoord0;
-flat out vec2 UVOrigin; // Corner of a current triangle
+flat out ivec2 UVTexelOrigin; // Corner of a current triangle in texel coords
+flat out vec2 atlasSize;
 out vec2 texCoord1;
 out vec2 texCoord2;
-out vec4 control;
+out vec4 control; // Animation parametrs for some shaders
 
-int calculateShaderID(in vec2 corner, float stepSize)
+int calculateShaderID(in ivec2 cornerPos)
 {
     int ID = 0;
-    stepSize /= 16;
-    for (int i = 1; i < 5; i++)
+    for (int i = 0; i < 4; i++)
     {
         ID *= 10;
-        ID += int(round((texture(Sampler0, corner + vec2(stepSize * i, 0)) * vertexColor * ColorModulator).w * 255)) - 250;
+        ID += int(round(texelFetch(Sampler0, cornerPos + ivec2(i, 0), 0).w * 255.0)) - 250; // Read 4 pixels from bottom left corner
     }
     return ID;
 }
@@ -43,31 +43,34 @@ void main() {
 
     sphericalVertexDistance = fog_spherical_distance(Position);
     cylindricalVertexDistance = fog_cylindrical_distance(Position);
-    vertexColor = minecraft_mix_light(Light0_Direction, Light1_Direction, Normal, Color) * texelFetch(Sampler2, UV2 / 16, 0);
+    vertexColor = minecraft_mix_light(Light0_Direction, Light1_Direction, Normal, Color) * texelFetch(Sampler2, UV2 >> 4, 0); //Changed UV2 / 16 to UV2 >> 4
     texCoord0 = UV0;
     
-    shaderID = 0;
+    shaderID = 0; // Default value, in case the previous data is not deleted correctly
 
     // Here goes modified code
     // Check 2 oposite corners for special texels (alpha = 254)
-    vec2 atlasSize = vec2(textureSize(Sampler0, 0));
-    vec2 UVSize = 16 / atlasSize; // I dare say you have no reason not to make all UV sizes the same.
-    vec2 corner = UV0 + vec2(0, UVSize.y); // Default corner
-    int alpha = int(round((texture(Sampler0, corner) * vertexColor * ColorModulator).w * 255));
-
+    
+    int alpha = int(round((texture(Sampler0, UV0) * vertexColor * ColorModulator).w * 255.0));
     if (alpha == 254)
     {
-        shaderID = calculateShaderID(corner, UVSize.x);
-        UVOrigin = UV0;
-    }
-    else
-    {
-        corner = UV0 + vec2(-UVSize.x, 0); // Oposite corner
-        alpha = int(round((texture(Sampler0, corner) * vertexColor * ColorModulator).w * 255));
-        if (alpha == 254)
+        atlasSize = vec2(textureSize(Sampler0, 0));
+        ivec2 UVtoTexel = ivec2(UV0 * atlasSize);
+
+        ivec2 cornerPos = UVtoTexel;
+        int vertexID = gl_VertexID % 4; // Check which corner was that
+
+        if (vertexID == 0)
         {
-            shaderID = calculateShaderID(corner, UVSize.x);
-            UVOrigin = UV0 - UVSize;
+            cornerPos += ivec2(0, 16); // Move to texture origin
+            shaderID = calculateShaderID(cornerPos);
+            UVTexelOrigin = UVtoTexel;
+        }
+        else
+        {
+            cornerPos += ivec2(-16, 0); // Move to texture origin
+            shaderID = calculateShaderID(cornerPos);
+            UVTexelOrigin = UVtoTexel - ivec2(16);
         }
     }
     // Back to vanilla stuff

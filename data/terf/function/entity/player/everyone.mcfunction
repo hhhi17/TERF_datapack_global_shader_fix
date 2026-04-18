@@ -2,7 +2,7 @@
 #terf_data_B = photon cannon charge
 #terf_data_C = immune
 #terf_data_D = force immune
-#terf_data_F = UNASSIGNED
+#terf_data_F = fard progress
 #terf_data_G = tool cooldown
 #terf_data_H = radiation damage
 #terf_data_I = absorbed radiation
@@ -107,6 +107,7 @@ scoreboard players operation temp terf_states /= 5000 terf_states
 execute if score temp terf_states matches 1.. run scoreboard players operation @s terf_data_H += temp terf_states
 
 execute unless score @s terf_data_C matches 1 if score @s terf_data_H matches 50000.. run function terf:entity/player/has_radiation_poisoning
+execute if score enable_farting terf_states matches 1 if score @s terf_data_H matches 1.. run function terf:entity/player/fart/calculate_body_rotation
 
 #passively decrease radiation
 scoreboard players operation temp terf_states = @s terf_data_I
